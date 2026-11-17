@@ -1,0 +1,28 @@
+name: CI/CD workflows
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  code:
+    runs-on: ubuntu-slim
+    steps:
+      - name: clone the code
+        run: echo "The code is running"
+        
+  build:
+    runs-on: ubuntu-slim
+    steps:
+      - name: building the code
+        run: echo "The code has build
+  test:
+    runs-on: ubuntu-slim
+    steps:
+      - name: testing the code
+        run: echo "Testing is done"
+        
+  deploy:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Deploy to production
+        run: echo "App is live"
