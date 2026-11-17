@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - name: Testing the code
-        run: echo "Testing the code
+        run: echo "Testing the code"
         
   deploy:
     needs: [test]
