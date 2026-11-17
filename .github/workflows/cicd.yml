@@ -1,0 +1,32 @@
+name: CICD workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  code:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Clone the code
+        run: echo "Run the code"
+        
+  build:
+    needs: [code]
+    runs-on: ubuntu-slim
+    steps:
+      - name: Integrating the code
+        run: echo "Code is merged"
+        
+  test:
+    needs: [build]
+    runs-on: ubuntu-slim
+    steps:
+      - name: Testing the code
+        run: echo "Testing the code
+        
+  deploy:
+    needs: [test]
+    runs-on: ubuntu-slim
+    steps:
+      - name: App is live
+        run: echo "Production is live"
