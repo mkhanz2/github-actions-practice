@@ -1,0 +1,20 @@
+name: python-lint
+
+on: 
+  push:
+    paths: "*.py"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-code
+        uses: actions/checkout@v7
+
+      - name: install lint
+        run: pip install ruff
+
+      - name: check the file
+        run: ruff check .
+  
+  
