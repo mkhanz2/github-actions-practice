@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - name: building the code
-        run: echo "The code has build
+        run: echo "The code has build"
   test:
     runs-on: ubuntu-slim
     steps:
