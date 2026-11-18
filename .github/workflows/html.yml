@@ -20,6 +20,12 @@ jobs:
       - name: Lint html
         run: htmlhint index.html
 
+      - name: check Docker
+        run: |
+          which docker
+          docker --version 
+          sudo systemctl status docker
+
       - name: Docker build image
         run: docker build -t my-html-app -f Dockerfile.v1 .
 
