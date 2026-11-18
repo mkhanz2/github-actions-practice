@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - name: checkout code
         uses: actions/checkout@v7
@@ -22,15 +22,7 @@ jobs:
       - name: Lint html
         run: htmlhint index.html
 
-      - name: check Docker
-        run: |
-          which docker
-          docker --version 
-          sudo systemctl status docker
-
-      - name: Start Docker
-        run: sudo systemctl start docker
-
+  
       - name: Docker build image
         run: docker build -t my-html-app -f Dockerfile.v1 .
 
