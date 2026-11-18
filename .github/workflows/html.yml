@@ -28,6 +28,9 @@ jobs:
           docker --version 
           sudo systemctl status docker
 
+      - name: Start Docker
+        run: sudo systemctl start docker
+
       - name: Docker build image
         run: docker build -t my-html-app -f Dockerfile.v1 .
 
