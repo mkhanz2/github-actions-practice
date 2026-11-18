@@ -19,7 +19,7 @@ jobs:
 
       - name: build and push to docker hub
         run: |
-          docker build -t my-html-app:latest -f Dockerfile.v1 .
+          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/my-html-app:latest -f Dockerfile.v1 .
           docker push ${{ vars.DOCKERHUB_USERNAME }}/my-html-app:latest
         
 
