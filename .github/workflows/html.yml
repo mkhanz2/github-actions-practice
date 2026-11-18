@@ -20,3 +20,6 @@ jobs:
       - name: Lint html
         run: htmlhint index.html
 
+      - name: Docker build image
+        run: docker build -t my-html-app -f Dockerfile.v1 .
+
