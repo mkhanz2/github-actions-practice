@@ -1,0 +1,22 @@
+name: html-pipeline
+
+on: 
+  push:
+    paths: "*.html"
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-slim
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v7
+
+      - name: check the file
+        run: test -f index.html
+
+      - name: Install lint
+        run: npm install -g htmlhint
+
+      - name: Lint html
+        run: htmlhint index.html
+
